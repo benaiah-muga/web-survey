@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #202125;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgb(237, 243, 244);
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+    display: none;
+}
+
+.slide:first-child {
+    display: block;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #505151;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #151515;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 1rem;
+}
+
+.flashes li {
+    padding: 0.5rem;
+    background-color: #2196F3;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.flashes li:last-child {
+    margin-bottom: 0;
+}
+
+.flashes li.success {
+    background-color: #4caf50;
+}
+
+.flashes li.danger {
+    background-color: #f44336;
+}
+
+.flashes li.warning {
+    background-color: #ff9800;
+}
+
+.flashes li.info {
+    background-color: #2196F3;
+}
+
+.flashes li.light {
+    background-color: #9e9e9e;
+}
+
+.flashes li.dark {
+    background-color: #222;
+}
+
+
+
+.admin-button {
+    background-color: #121313;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.admin-button:hover {
+    background-color: #121313;
+}
+

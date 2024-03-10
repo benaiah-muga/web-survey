@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #2a3136;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: #4CAF50;
+        }
+
+        p {
+            font-size: 19px;
+            margin-top: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 70px;
+        }
+
+        .message{
+            color: #4CAF50;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Sleep Survey</h1>
+    <p>{{ greeting }} The survey is by statistics students of group 11 to investigate the sleeping patterns of students in Bugema University.</p>
+    <button id="continueButton">Continue to Survey</button>
+    <h1 class="message">{{ message }}</h1>
+    <script>
+        document.getElementById("continueButton").addEventListener("click", function() {
+            window.location.href = "{{ url_for('index') }}";
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Welcome to this survey!</h1>
+        <form method="POST" action="{{ url_for('index') }}">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="sleep_time">Sleep Time:</label>
+            <input type="time" id="sleep_time" name="sleep_time" required>
+            <label for="wake_up_time">Wake Up Time:</label>
+            <input type="time" id="wake_up_time" name="wake_up_time" required>
+            <button type="submit">Submit</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class="flashes">
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        
+        <a href="{{ url_for('admin_login') }}" class="admin-button">Admin</a>            
+       
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
