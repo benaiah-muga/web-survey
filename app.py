@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import secrets
 from datetime import datetime
 from flask_cors import CORS 
-
+import os
 app = Flask(__name__)
 CORS(app)
 app.config['SECRET_KEY'] = secrets.token_hex(16)
@@ -140,5 +140,6 @@ def admin_dashboard():
     return render_template('admin.html', data=data, total_entries=total_entries)
 
 if __name__ == '__main__':
-
-    app.run()
+  backend_url = os.environ.get('BACKEND_URL', 'http://localhost:5000')  # Default for development
+  app.run(host='0.0.0.0', port=5000, debug=False)
+    
