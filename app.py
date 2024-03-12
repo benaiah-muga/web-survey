@@ -68,9 +68,8 @@ def index():
             db.session.commit()
             flash('Survey data submitted successfully!', 'success')
             
-            # Redirect to welcome page with a thank you message
             
-            return redirect(url_for('welcome', message='Thank you for taking part in the survey!'))
+            return render_template('index.html', currentSlide=currentSlide)
         except:
             flash('Error occurred while submitting survey data.', 'danger')
 
@@ -140,6 +139,6 @@ def admin_dashboard():
     return render_template('admin.html', data=data, total_entries=total_entries)
 
 if __name__ == '__main__':
-  backend_url = os.environ.get('BACKEND_URL', 'http://localhost:5000')  # Default for development
+#   backend_url = os.environ.get('BACKEND_URL', 'http://localhost:5000')  # Default for development
   app.run(host='0.0.0.0', port=5000, debug=False)
     
